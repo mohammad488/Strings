@@ -10,6 +10,11 @@ module.exports = {
       fontFamily: {
         display: 'Lobster Two',
       },
+      spacing: {
+        'some key': {
+          1.5: '<something>', // not sure about the correct value
+        },
+      },
       colors: {
         ...defaultColors,
         spill: {
