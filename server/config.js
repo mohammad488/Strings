@@ -7,6 +7,6 @@ module.exports = {
   },
   db: {
     uri: process.env.MONGO_URI,
-    name: 'lechat',
+    name: 'strings',
   },
 };
