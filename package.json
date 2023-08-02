@@ -13,7 +13,7 @@
     "dev:server": "nodemon server",
     "dev": "concurrently \"npm run dev:server\"",
     "start": "node server",
-    "build": "netlify functions:build --src ./",
+    "build": "netlify functions:build --src ./server.js",
     "format": "prettier --write ."
   },
   "repository": {

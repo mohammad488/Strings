@@ -1,5 +1,5 @@
 require('dotenv').config({ path: './.env' });
-
+import serverless from 'serverless-http'
 const express = require('express');
 const { Server: SocketServer } = require('socket.io');
 const http = require('http');
@@ -41,4 +41,6 @@ if (!config.isDev) {
 global.io = new SocketServer(server, { cors: config.cors });
 require('./socket');
 
-module.exports = ServerlessHttp(server);
+
+module.exports = server;
+module.exports.handler = serverless(server);
