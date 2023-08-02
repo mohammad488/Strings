@@ -1,6 +1,6 @@
 require('dotenv').config({ path: './.env' });
-import serverless from 'serverless-http'
 const express = require('express');
+const serverless = require('serverless-http');
 const { Server: SocketServer } = require('socket.io');
 const http = require('http');
 const path = require('path');
