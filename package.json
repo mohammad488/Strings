@@ -13,6 +13,7 @@
     "dev:server": "nodemon server",
     "dev": "concurrently \"npm run dev:server\"",
     "start": "node server",
+    "build": "netlify-lambda build express",
     "format": "prettier --write ."
   },
   "repository": {
