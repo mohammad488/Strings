@@ -14,7 +14,7 @@
     "dev:server": "nodemon server",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "build": "webpack --config ./webpack.prod.js",
-    "start": "node server",
+    "start": "webpack serve --config ./webpack.dev.js",
     "prepare": "husky install",
     "format": "prettier --write ."
   },
