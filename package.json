@@ -10,10 +10,8 @@
     "node": "16.17.1"
   },
   "scripts": {
-    "dev:client": "webpack serve --config ./webpack.dev.js",
     "dev:server": "nodemon server",
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "build": "webpack --config ./webpack.prod.js",
+    "dev": "concurrently \"npm run dev:server\"",
     "start": "node server",
     "format": "prettier --write ."
   },
