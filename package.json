@@ -15,7 +15,6 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "build": "webpack --config ./webpack.prod.js",
     "start": "node server",
-    "prepare": "husky install",
     "format": "prettier --write ."
   },
   "repository": {
