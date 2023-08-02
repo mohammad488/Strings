@@ -3,7 +3,7 @@ const { isDev, db } = require('../config');
 
 module.exports = async () => {
   try {
-    const uri = isDev ? `mongodb://localhost:27017/${db.name}` : db.uri;
+    const uri = db.uri;
     await connect(uri);
 
     console.log('database connected');
