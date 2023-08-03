@@ -4,6 +4,7 @@ const serverless = require('serverless-http');
 const { Server: SocketServer } = require('socket.io');
 const http = require('http');
 const path = require('path');
+const cors = require('cors');
 const routes = require('./routes');
 const config = require('./config');
 const db = require('./db/connect');
@@ -14,6 +15,7 @@ const app = express();
 const server = http.createServer(app);
 
 // middleware
+app.use(cors(config.cors));
 app.use(express.json({ limit: '10mb' }));
 app.use(
   express.urlencoded({
@@ -33,7 +35,7 @@ if (!config.isDev) {
 }
 
 // store socket on global object
-global.io = new SocketServer(server, { path: "/.netlify/functions/server/socket.io" });
+global.io = new SocketServer(server, { cors: config.cors, path: "/.netlify/functions/server/socket.io" });
 require('./socket');
 
 
