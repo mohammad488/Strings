@@ -28,14 +28,14 @@ app.use(
 cloudinary();
 db();
 
-app.use('/api', routes);
+app.use('/.netlify/functions/server/api', routes);
 
 if (!config.isDev) {
-  app.get('*', (req, res) => res.send("hello"));
+  app.get('*', (req, res) => res.send(req.url));
 }
 
 // store socket on global object
-global.io = new SocketServer(server, { cors: config.cors });
+global.io = new SocketServer(server, { cors: config.cors, path: "/.netlify/functions/server/socket.io" });
 require('./socket');
 
 
